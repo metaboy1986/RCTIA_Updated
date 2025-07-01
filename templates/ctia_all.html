@@ -1,0 +1,4 @@
+<!DOCTYPE html>
+<html><head><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><h1>All CTIA Advisories</h1><ul>{% for adv in advisories %}<li><a href="{{ url_for('ctia_detail', adv_id=adv.id) }}">{{ adv.title }}</a> ({{ adv.date }})</li>{% endfor %}</ul>
+<a class="btn" href="{{ url_for('index') }}">Back to Home</a></body></html>

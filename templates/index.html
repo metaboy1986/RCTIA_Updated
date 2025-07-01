@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"><title>RCTIA Platform</title></head>
+<body class="home">
+<h1 class="title">Welcome to RCTIA - Threat Intelligence</h1>
+<h2>Top 10 Latest Advisories</h2>
+<ul>{% for adv in advisories %}<li><a href="{{ url_for('ctia_detail', adv_id=adv.id) }}">{{ adv.title }}</a> ({{ adv.date }})</li>{% endfor %}</ul>
+<a class="btn" href="{{ url_for('ctia_all') }}">View All Advisories</a>
+<h2>IOC Dashboard</h2>
+<div class="ioc-cards">{% for ioc, values in ioc_data.items() %}<a class="card" href="{{ url_for('ioc_list', ioc_type=ioc) }}">{{ ioc }} ({{ values | length }})</a>{% endfor %}</div>
+</body></html>
