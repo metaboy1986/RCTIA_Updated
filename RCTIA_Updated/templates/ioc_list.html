@@ -1,0 +1,4 @@
+<!DOCTYPE html>
+<html><head><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><h1>IOCs - {{ ioc_type }}</h1><ul>{% for ioc in iocs %}<li>{{ ioc }}</li>{% endfor %}</ul>
+<a class="btn" href="{{ url_for('index') }}">Back to Dashboard</a></body></html>
